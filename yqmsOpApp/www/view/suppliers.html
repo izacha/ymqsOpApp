@@ -1,0 +1,31 @@
+<ion-view has-subheader="true">        
+    <div class="item item-divider row responsive-sm" style="text-align:center; top:88px;">
+            <div class="col col-10">구분</div>
+            <div class="col col-60">
+                <i class="fa fa-square" aria-hidden="true" id="i_bad"></i>&nbsp;불량&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-square" aria-hidden="true" id="i_imp"></i>&nbsp;개선완료
+            </div>
+            <div class="col col-10">불량건</div>
+            <div class="col col-10">개선완료</div>
+            <div class="col col-10">개선율</div>    
+        </div>   
+<!--    <ion-content class="has-subheader">-->
+    <ion-content style="top:128px">
+        
+        
+        <ion-list>
+            <ion-item style="padding:0px; height:48px; " ng-repeat="dbData in dbDataList">
+                <div class="row responsive-sm" style="text-align:center; height:48px;">
+                    <div class="col col-10" ng-bind="dbData.name_kor"></div>
+                    <div class="col col-60" style="padding:3px 0px;">
+                        <buyback-bar data="dbData" bad_max="bad_max"></buyback-bar>
+                    </div>
+                    <div class="col col-10" ng-bind="dbData.bad_cnt"></div>
+                    <div class="col col-10" ng-bind="dbData.imp_cnt"></div>
+                    <div class="col col-10" ng-bind="dbData.imp_rate+'%'"></div>    
+                </div>                
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view> 
+    

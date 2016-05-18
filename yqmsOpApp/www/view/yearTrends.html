@@ -1,0 +1,25 @@
+<ion-view ng-controller="yearTrendsCtrl" has-subheader="false">        
+    <ion-content style="top:50px;">
+        
+        <nvd3 options="options" data="data"></nvd3>
+        
+        <table id="yearTrendsTable" class="ui small celled structured unstackable table">
+            <thead class="center aligned">
+            <tr>
+                <th class="bottom aligned"></th>
+                <th ng-repeat="data in tableData track by data.month">{{data.month}}월</th>
+            </tr>
+            <tr>
+                <td class="top aligned">달성율</td>
+                <td ng-repeat="data in tableData track by data.month">
+                    {{data.ppm_goal / (data.bad_cnt/data.comp_cnt*1000000) * 100 | number:0}}
+                    <span ng-if="data.comp_cnt">%</span>
+                    <span ng-if="!data.comp_cnt">-</span>
+                </td>
+            </tr>
+            </thead>    
+        </table>    
+<!--    </div>-->
+    </ion-content>    
+</ion-view> 
+    

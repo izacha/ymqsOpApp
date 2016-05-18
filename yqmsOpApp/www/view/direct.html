@@ -1,0 +1,41 @@
+<ion-view>         
+        <div class="item item-divider row responsive-sm" style="text-align:center; top:88px">
+            <div class="col col-10">구분</div>
+            <div class="col col-60">                                                                                           
+                <i class="fa fa-square" aria-hidden="true" id="i_ppm"></i>&nbsp;실적&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-square" aria-hidden="true" id="i_exceed_ppm"></i>&nbsp;초과실적&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-ellipsis-h" aria-hidden="true" id="i_ppmGoal"></i>&nbsp;목표
+            </div>
+            <div class="col col-10">실적</div>
+            <div class="col col-10">달성율</div>
+            <div class="col col-10">개선율</div>    
+        </div>   
+    
+<!--    <ion-content class="has-subheader">-->
+    <ion-content style="top:128px;">
+            
+        
+        <ion-list click-for-options-wrapper ng-controller="listOptCtrl"
+              can-swipe="listCanSwipe">
+            <ion-item click-for-options style="padding:0px; height:46px;" ng-repeat="dbData in dbDataList">
+                <div class="row responsive-sm" style="text-align:center;" ng-click="clickSwipe()">
+                    <div class="col col-10" ng-bind="dbData.scom1_nm"></div>
+<!--                    <div class="col col-60">ppm : {{dbData.ppm | number:2}} // ppmGoal : {{dbData.ppm_goal | number:2}}</div>-->
+                    <div class="col col-60" style="padding:0px;">
+                        <direct-bar data="dbData" max="compMax"></direct-bar>
+                    </div>
+                    <div class="col col-10" ng-bind="ppm(dbData)"></div>
+                    <div class="col col-10" ng-bind="achivRate(dbData)+'%'"></div>
+                    <div class="col col-10" ng-bind="impRate(dbData)+'%'"></div>    
+                </div>
+<!--                <ion-option-button style="background-color: rgba(18, 67, 172, 0.74902); color: white" ng-click="showYearsTrend(dbData)">-->
+                <ion-option-button style="background-color: rgba(18, 67, 172, 0.74902); color: white;" ng-click="showYearsTrend(dbData)">
+                  연간추이
+                </ion-option-button>
+                <ion-option-button style="background-color: rgba(0, 157, 151, 0.74902); color: white" ng-click="showSupplier(dbData)">
+                  공급업체
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>                    
+</ion-view>

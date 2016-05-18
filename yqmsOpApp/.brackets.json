@@ -1,0 +1,9 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/Users/yura/Desktop/projects/yqmsOpApp/www/view/direct.js",
+        "C:/Users/yura/Desktop/projects/yqmsOpApp/www/controller/DircetListOptionController.js",
+        "C:/Users/yura/Desktop/projects/yqmsOpApp/www/controller/DirectDetailController.js",
+        "C:/Users/yura/Desktop/projects/yqmsOpApp/www/controller/DirectListController.js",
+        "C:/Users/yura/Desktop/projects/yqmsOpApp/www/controller/ShowSuppliersController.js"
+    ]
+}

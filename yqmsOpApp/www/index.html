@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app="app">
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title></title> 
+
+        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/table.css">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- ionic/angularjs js -->
+        <script src="js/jquery-2.2.1.min.js"></script>
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+
+        <script src="lib/ionic/js/angular/angular-resource.js"></script>
+        <script src="cordova.js"></script>
+        <!-- your app's js -->
+        <script src="js/app.js"></script>      
+        <script src="directive/clickListOpt.js"></script>
+        <script src="directive/directChart-directive.js"></script> 
+        <script src="directive/buybackChart-directive.js"></script>
+      
+<!--      Chart : nvd3-->
+        <script src="lib/angular-nvd3/node_modules/d3/d3.min.js"></script>
+        <script src="lib/angular-nvd3/node_modules/nvd3/build/nv.d3.js"></script>
+        <script src="lib/angular-nvd3/dist/angular-nvd3.min.js"></script>            
+      <link rel="stylesheet" href="lib/angular-nvd3/node_modules/nvd3/build/nv.d3.min.css">
+      <link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">        
+  </head>
+  <body>
+    <div ng-controller="MainCtrl">
+        <ion-header-bar class="bar-stable bar-positive bar-header" align-title="center">
+            <div class="buttons" ng-hide="backBtnHide">
+                <a class="button icon-left ion-chevron-left button-clear button-white" ng-href="#{{backLocation}}"></a>                                        
+            </div>
+                
+            <h1 class="title" ng-bind="headTitle"></h1>
+                
+            <a class="button icon-right ion-power button-clear button-white" ng-click="exitApp()"></a>
+        </ion-header-bar>
+
+        <ion-header-bar class="bar bar-stable bar-subheader {{hideCategorySub ? &apos;hide&apos; : &apos;&apos;}}">
+            <input type="month" ng-change="changeDate()" ng-model="selectDate" style="display: inline-block; background-color:white; border: 1px solid #CCC8C8;" placeholder="yyyy-MM" min="2016-01" max="{{maxDate}}" required>            
+
+            <select name="selCategory" id="selCategory" style="width:100px; height:35px; float:right; background-color:white;" ng-model="data.selectedOption" ng-options="option.name for option in data.availableOptions track by option.id" ng-change="categoryChange()" ng-hide="suppliersFlag">
+                </select>
+
+        </ion-header-bar> <!-- head / subhead -->        
+        
+        <ion-nav-view></ion-nav-view>
+    </div>
+      
+    <script src="controller/MainController.js"></script>
+    <script src="controller/DirectListController.js"></script>
+    <script src="controller/YearTrendsController.js"></script>
+    <script src="controller/BuyBackController.js"></script>
+    <script src="controller/ShowSuppliersController.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+/* Empty. Add your own CSS if you like */
+
+.full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+}
+.partially button span {
+    background-color: orange;
+    border-radius: 32px;
+      color: black;
+}
+.item-content{
+    padding:3px !important;
+}
+
+
+/*below... about chart options*/
+
+/*y값이 0일떄 barchart의 윗부분이 표시되 부분 안되게*/
+.nvd3 rect[height="1"] {
+  display: none !important;
+}
+
+/*x축 max/min값 0,13 안보이게*/
+.nv-axisMaxMin.nv-axisMaxMin-x.nv-axisMax-x{
+    opacity: 0;
+}
+
+/*x축 baseline hidden*/
+.tick>line[x2="0"]{
+    opacity: 0;
+}
+
+
+.nvd3 .nv-axis .nv-axisMaxMin text{
+    font-weight: 100 !important;
+}
+
+.nvd3 .nv-axis path{
+    stroke: #fff !important;
+}
+
+.nvd3 text {
+    font-size: 1.1em !important;
+}
+
+.nv-legendWrap{
+    width: 300px !important;
+}
+
+.nv-bars>rect{
+/*
+    stroke-dasharray: 37,533, 0 !important;
+    fill:none !important;
+    stroke: black;
+    stroke-width:2;
+*/
+}
+
+/*point점*/
+.nvd3 .nv-groups .nv-point:not([hide="true"]) {
+    stroke-opacity: 0.8 !important;
+    stroke-width: 2px;
+}
+
+
+#yearTrendsTable{
+    width:98%;
+    margin:0 auto;
+    margin-top:-25px;
+    margin-bottom:25px;
+}
+
+#i_ppm{
+    color: rgb(103, 183, 220);
+}
+#i_exceed_ppm{
+    color: #FF6F6F; 
+}
+#i_ppmGoal{
+    color: rgb(47, 64, 116);
+}
+
+.tab_space{
+    margin: 0 3px;
+}
+
+#i_imp{
+    color: rgb(47, 64, 116);
+}
+
+#i_bad{
+     color: rgb(103, 183, 220);
+}
